@@ -11,7 +11,7 @@ import com.marcelosmith77.android.easydrawer.activity.AbstractBaseDrawerActivity
  *
  * Permite substituir um fragmento adicionando ou não o mesmo a pilha de navegação.
  *
- * @TODO Se trocar implementacao do navigator pela compatactivity, desta forma,
+ * @todo Se trocar implementacao do navigator pela compatactivity, desta forma,
  * o navigatior fica independente da implementacao do drawer, sendo possível utilizando em qualquer acitivy
  */
 public class ActivityNavigator implements INavigator {

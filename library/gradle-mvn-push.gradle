@@ -111,7 +111,7 @@ afterEvaluate { project ->
         }
 
         jarJavadocTask.dependsOn javadocTask
-        artifacts.add('archives', jarJavadocTask)
+//        artifacts.add('archives', jarJavadocTask)
 
         def jarSourceTask = task("jar${variant.name.capitalize()}Sources", type: Jar) {
             description "Generates Java Sources for $variant.name."

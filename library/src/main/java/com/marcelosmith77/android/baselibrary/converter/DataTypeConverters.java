@@ -2,16 +2,12 @@ package com.marcelosmith77.android.baselibrary.converter;
 
 import android.databinding.InverseMethod;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Date;
-
 import com.marcelosmith77.android.baselibrary.DateTimeUtils;
-import com.marcelosmith77.android.baselibrary.R;
 import com.marcelosmith77.android.baselibrary.formatter.CurrencyFormatter;
+
+import java.util.Date;
 
 public class DataTypeConverters {
 
