@@ -1,0 +1,7 @@
+<resources>
+    <string name="navigation_drawer_open">Abrir Menu</string>
+    <string name="navigation_drawer_close">Fechar Menu</string>
+    <string name="touch_again_to_exit">Toque novamente para sair.</string>
+    <string name="ok">Ok</string>
+
+</resources>
