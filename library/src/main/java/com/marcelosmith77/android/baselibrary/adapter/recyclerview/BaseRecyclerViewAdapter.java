@@ -85,7 +85,11 @@ public abstract class BaseRecyclerViewAdapter<T extends BaseRecyclerViewHolder,M
      * limpa view
      */
     public void detachMvvmView() {
+
+        if (getItems() != null){
+            getItems().clear();
+        }
+
         view = null;
     }
-
 }

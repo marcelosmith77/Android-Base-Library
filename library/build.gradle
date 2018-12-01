@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion setup.minSdk
         targetSdkVersion setup.targetSdk
-        versionCode 150010000
-        versionName "1.00.00"
+        versionCode 150010005
+        versionName "1.00.05"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -36,32 +36,32 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile "com.github.marcelosmith77:android-easy-drawer:1.00.03"
+    implementation "com.github.marcelosmith77:android-easy-drawer:1.00.04"
 
     // Dependency for RXjava 2
-    compile "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
-    compile "io.reactivex.rxjava2:rxjava:${versions.rxJava2}"
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rxJava2}"
 
-    compile "com.squareup.retrofit2:retrofit:${versions.retrofit}"
-    compile "com.squareup.retrofit2:retrofit:${versions.retrofit}"
-    compile "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
-    compile "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
 
-    compile "com.android.support:appcompat-v7:${versions.supportLib}"
-    compile "com.android.support:design:${versions.supportLib}"
-    compile "com.android.support:recyclerview-v7:${versions.supportLib}"
-    compile "com.android.support:cardview-v7:${versions.supportLib}"
-    compile "com.android.support:support-v4:${versions.supportLib}"
+    implementation "com.android.support:appcompat-v7:${versions.supportLib}"
+    implementation "com.android.support:design:${versions.supportLib}"
+    implementation "com.android.support:recyclerview-v7:${versions.supportLib}"
+    implementation "com.android.support:cardview-v7:${versions.supportLib}"
+    implementation "com.android.support:support-v4:${versions.supportLib}"
 
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    compile 'com.android.databinding:baseLibrary:2.3.0'
+    implementation 'com.android.databinding:baseLibrary:2.3.0'
 
     // Dependency for Parceler
-    compile "org.parceler:parceler-api:${versions.parceler}"
+    implementation "org.parceler:parceler-api:${versions.parceler}"
 
     // Dependency for Testing
-    testCompile "junit:junit:${versions.junit}"
+    testImplementation "junit:junit:${versions.junit}"
 
-    compile 'javax.inject:javax.inject:1'
+    implementation 'javax.inject:javax.inject:1'
 }

@@ -100,6 +100,16 @@ public class DataTypeConverters {
      * @return
      */
     public static String toTime(Date date) {
-        return DateTimeUtils.hora((date));
+        return DateTimeUtils.hora(date);
+    }
+
+
+    /**
+     * Recupera a data formatada a partir do objeto Date
+     * @param date
+     * @return
+     */
+    public static String toShortDate(Date date) {
+        return DateTimeUtils.shortDate(date);
     }
 }
