@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="valueSelector_text">16sp</dimen>
+    <dimen name="valueSelector_label_text">12sp</dimen>
+</resources>

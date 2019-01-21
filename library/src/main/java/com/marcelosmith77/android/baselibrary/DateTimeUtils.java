@@ -25,12 +25,44 @@ public class DateTimeUtils {
         return (String) DateFormat.format("ddMMyyyy", date);
     }
 
+    public static String anoMesDia(Date date) {
+        if (date == null)
+            return "";
+
+        return (String) DateFormat.format("yyyyMMdd", date);
+    }
+
+    public static Date primeiroDiaMes(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        return cal.getTime();
+    }
+
+    public static String diaMes(Date date) {
+        if (date == null)
+            return "";
+
+        return (String) DateFormat.format("dd-MMM", date);
+    }
+
+    public static String diaDaSemana(long date, boolean uppercase) {
+        String diaSemana = (String) DateFormat.format("E ", new Date(date));
+
+        if (uppercase)
+            return diaSemana.toUpperCase();
+
+        return diaSemana;
+    }
+
+
     public static String shortDate(Date date) {
         if (date == null)
             return "";
 
         return (String) DateFormat.format("dd-MM", date);
     }
+
 
     public static Date addMes(Date date, int meses) {
 
@@ -121,17 +153,32 @@ public class DateTimeUtils {
 
     public static int weekDif(Date date) {
         Calendar cal = Calendar.getInstance();
+
         int weekToday = cal.get(Calendar.WEEK_OF_YEAR);
         int yearToday = cal.get(Calendar.YEAR);
+        int monthToday = cal.get(Calendar.MONTH);
 
         cal.setTime(date);
         int weekDate = cal.get(Calendar.WEEK_OF_YEAR);
         int weekYear = cal.get(Calendar.YEAR);
+        int weekMonth = cal.get(Calendar.MONTH);
+
+        if (monthToday == 11 && weekToday == 1  && yearToday == weekYear) {
+            weekToday = 53;
+        }
+
+        if (weekMonth == 11 && weekDate == 1 && yearToday == weekYear) {
+            weekDate = 53;
+        } else if (weekToday == 1 && weekMonth == 11 && weekDate == 1 && yearToday == weekYear + 1) {
+            return 0;
+        } else if (weekToday == 1 && weekMonth == 11 && weekDate == 52 && yearToday == weekYear + 1) {
+            return 1;
+        }
 
         if (yearToday == weekYear)
             return weekDate - weekToday;
 
-        return (weekDate - weekToday) + ((yearToday - weekYear) * 52); // FIXED YEAR WEEKS
+        return ((yearToday - weekYear) * 53) - weekDate + weekToday; // FIXED YEAR WEEKS
 
     }
 
@@ -160,6 +207,14 @@ public class DateTimeUtils {
 
             return extraDays - dayTwo.get(Calendar.DAY_OF_YEAR) + dayOneOriginalYearDays;
         }
+    }
+
+    public static String valueOf(Date value) {
+        return String.valueOf(value.getTime());
+    }
+
+    public static Date valueOf(String value) {
+        return new Date(Long.valueOf(value));
     }
 
 }

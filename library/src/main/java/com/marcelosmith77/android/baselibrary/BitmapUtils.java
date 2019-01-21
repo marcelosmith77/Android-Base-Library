@@ -19,17 +19,33 @@ public class BitmapUtils {
      * @return Bitmap - Bitmap da imagem baixada
      */
     public static Bitmap getBitmapFromURL(String imageUrl) {
+        InputStream inputStream = null;
+        HttpURLConnection connection = null;
         try {
             URL url = new URL(imageUrl);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpURLConnection) url.openConnection();
             connection.setDoInput(true);
             connection.connect();
-            InputStream inputStream = connection.getInputStream();
-            Bitmap imageBitmap = BitmapFactory.decodeStream(inputStream);
-            return imageBitmap;
+            inputStream = connection.getInputStream();
+            return BitmapFactory.decodeStream(inputStream);
         } catch (IOException e) {
-            e.printStackTrace();
             return null;
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (Exception e) {
+                    // IGNORE
+                }
+            }
+
+            if (connection != null) {
+                try {
+                    connection.disconnect();
+                } catch (Exception e) {
+                    // IGNORE
+                }
+            }
         }
     }
 }

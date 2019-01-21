@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="ValueSelector">
+        <attr name="minValue" format="integer" />
+        <attr name="maxValue" format="integer" />
+        <attr name="value" format="integer" />
+        <attr name="onValueChange" format="reference" />
+    </declare-styleable>
+</resources>
