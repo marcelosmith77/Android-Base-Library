@@ -97,6 +97,58 @@ public class DateTimeUtils {
         return cal.getTime();
     }
 
+    public static Date getPrimeiroDiaSemanaPassada() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.WEEK_OF_YEAR, -1);
+        cal.add(Calendar.DATE, 1 - cal.get(Calendar.DAY_OF_WEEK ));
+
+        return cal.getTime();
+    }
+
+    public static Date getUltimoDiaSemanaPassada() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.WEEK_OF_YEAR, -1);
+        cal.add(Calendar.DATE, 7 - cal.get(Calendar.DAY_OF_WEEK ));
+
+        return cal.getTime();
+    }
+
+    public static Date getMesmoDiaSemanaPassada() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.WEEK_OF_YEAR, -1);
+
+        return cal.getTime();
+    }
+
+    public static Date getMesmoDiaMesPassado() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.MONTH, -1);
+
+        return cal.getTime();
+    }
+
+    public static Date getPrimeiroDiaMesPassado() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.MONTH, -1);
+        cal.add(Calendar.DAY_OF_MONTH, 1);
+
+        return cal.getTime();
+    }
+
+    public static Date getMesmoDiaOntemSemanaPassada() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.WEEK_OF_YEAR, -1);
+        cal.add(Calendar.DATE, -1);
+
+        return cal.getTime();
+    }
+
     public static Date clearTime(Date date) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
