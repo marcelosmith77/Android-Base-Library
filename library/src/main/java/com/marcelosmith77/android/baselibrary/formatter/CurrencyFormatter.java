@@ -110,9 +110,13 @@ public class CurrencyFormatter {
     }
 
     public static String currencyDoubleToString(double currencyDouble) {
+        return currencyDoubleToString(currencyDouble, false);
+    }
+
+    public static String currencyDoubleToString(double currencyDouble, boolean showPositiveSign) {
         String currencyString = NumberFormat.getCurrencyInstance()
                 .format(currencyDouble);
-        return currencyString;
+        return (showPositiveSign && currencyDouble > 0 ? "+" + currencyString : currencyString);
     }
 
     public static int currencyDoubleToInt(double currencyDouble) {
