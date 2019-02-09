@@ -1,4 +1,4 @@
-package com.melgames.manicure.utils;
+package com.marcelosmith77.android.baselibrary;
 
 import android.content.Context;
 

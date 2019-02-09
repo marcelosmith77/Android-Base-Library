@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion setup.minSdk
         targetSdkVersion setup.targetSdk
-        versionCode 150010016
-        versionName "1.00.16"
+        versionCode 150010019
+        versionName "1.00.19"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -33,7 +33,8 @@ apply from: 'gradle-mvn-push.gradle'
 
 dependencies {
 
-    implementation "com.github.marcelosmith77:android-easy-drawer:1.00.06"
+    implementation "com.github.marcelosmith77:android-easy-drawer:1.00.07"
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 
     // Dependency for RXjava 2
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
