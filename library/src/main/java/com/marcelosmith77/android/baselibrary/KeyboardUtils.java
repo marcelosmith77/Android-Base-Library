@@ -37,9 +37,11 @@ public class KeyboardUtils {
      */
     public static void forceFocus(final EditText view, final Context context) {
 
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+        if (context != null && view != null) {
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
 
-        view.requestFocusFromTouch();
+            view.requestFocusFromTouch();
+        }
     }
 }
