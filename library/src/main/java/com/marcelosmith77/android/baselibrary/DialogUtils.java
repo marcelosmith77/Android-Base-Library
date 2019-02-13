@@ -44,11 +44,16 @@ public class DialogUtils {
 
     public static void showInfo(Context context, @StringRes int content, MaterialDialog.SingleButtonCallback positiveCallback) {
 
+        showInfo(context, R.string.attention, content, positiveCallback);
+    }
+
+    public static void showInfo(Context context, @StringRes int title, @StringRes int content, MaterialDialog.SingleButtonCallback positiveCallback) {
+
         KeyboardUtils.hideKeyboard(context);
 
         final MaterialDialog dialog = new MaterialDialog.Builder(context)
                 .iconRes(R.drawable.ic_alert_info)
-                .title(R.string.attention)
+                .title(title)
                 .content(content)
                 .positiveText(R.string.ok)
                 .onPositive(positiveCallback).build();
@@ -56,17 +61,25 @@ public class DialogUtils {
         dialog.show();
     }
 
+    public static void showError(Context context, @StringRes int title, @StringRes int content) {
+        showError(context, title, content, null);
+    }
+
     public static void showError(Context context, @StringRes int content) {
         showError(context, content, null);
     }
 
     public static void showError(Context context, @StringRes int content, MaterialDialog.SingleButtonCallback positiveCallback) {
+        showError(context, R.string.attention, content, positiveCallback);
+    }
+
+    public static void showError(Context context, @StringRes int title, @StringRes int content, MaterialDialog.SingleButtonCallback positiveCallback) {
 
         KeyboardUtils.hideKeyboard(context);
 
         final MaterialDialog dialog = new MaterialDialog.Builder(context)
                 .iconRes(R.drawable.ic_alert_error)
-                .title(R.string.attention)
+                .title(title)
                 .content(content)
                 .positiveText(R.string.ok)
                 .onPositive(positiveCallback).build();
