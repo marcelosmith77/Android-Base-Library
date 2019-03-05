@@ -18,17 +18,17 @@ import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;
  *
  * @see BaseRecyclerViewHolder
  */
-public abstract class BaseRecyclerViewAdapter<T extends BaseRecyclerViewHolder,M, V extends MvvmView> extends RecyclerView.Adapter<T> {
+public abstract class BaseRecyclerViewAdapter<VH extends BaseRecyclerViewHolder,M, V extends MvvmView> extends RecyclerView.Adapter<VH> {
 
     private V view;
 
-    public T onCreateViewHolder(ViewGroup parent, int viewType) {
+    public VH onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, viewType, parent, false);
         return onCreateViewHolder(binding, view);
     }
 
-    protected abstract T onCreateViewHolder(ViewDataBinding binding, V view);
+    protected abstract VH onCreateViewHolder(ViewDataBinding binding, V view);
 
     /**
      * Recupera o view model da posicao e realiza o bind do layout com o modelo
@@ -36,7 +36,7 @@ public abstract class BaseRecyclerViewAdapter<T extends BaseRecyclerViewHolder,M
      * @param holder
      * @param position
      */
-    public void onBindViewHolder(T holder, int position) {
+    public void onBindViewHolder(VH holder, int position) {
         M model = getModelForPosition(position);
         holder.bind(model);
     }

@@ -10,7 +10,7 @@ import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;
 /**
  * Adapter de um único layout para toda a lista
  */
-public abstract class MvvmSingleLayoutRecyclerViewAdapter<T extends BaseRecyclerViewHolder,M, V extends MvvmView> extends BaseRecyclerViewAdapter<T, M, V> {
+public abstract class MvvmSingleLayoutRecyclerViewAdapter<VH extends BaseRecyclerViewHolder,M, V extends MvvmView> extends BaseRecyclerViewAdapter<VH, M, V> {
     private final int layoutId;
     private List<M> items;
 
