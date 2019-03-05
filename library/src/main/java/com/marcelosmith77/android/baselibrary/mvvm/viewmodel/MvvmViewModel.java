@@ -3,7 +3,7 @@ package com.marcelosmith77.android.baselibrary.mvvm.viewmodel;
 import com.marcelosmith77.android.baselibrary.activity.INavigator;
 import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;
 
-public abstract class MvvmViewModel<T, V extends MvvmView> extends MvvmObservableViewModel<T, V> {
+public abstract class MvvmViewModel<M, V extends MvvmView> extends MvvmObservableViewModel<M, V> {
 
     /**
      * Ponte para navegar entre os fragmentos e activites do sistema
@@ -30,7 +30,7 @@ public abstract class MvvmViewModel<T, V extends MvvmView> extends MvvmObservabl
     }
 
     @Override
-    public void setModel(T model) {
+    public void setModel(M model) {
 
         super.setModel(model);
 

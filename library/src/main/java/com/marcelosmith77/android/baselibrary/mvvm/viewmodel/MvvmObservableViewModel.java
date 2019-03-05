@@ -14,9 +14,9 @@ import io.reactivex.disposables.Disposable;
 /**
  * Interface para definir uma View Model
  */
-public abstract class MvvmObservableViewModel<T, V extends MvvmView> extends BaseObservable {
+public abstract class MvvmObservableViewModel<M, V extends MvvmView> extends BaseObservable {
 
-    private T model;
+    private M model;
     private V mvvmView;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -37,11 +37,11 @@ public abstract class MvvmObservableViewModel<T, V extends MvvmView> extends Bas
 
     public void onDestroy(){}
 
-    public void setModel(T model) {
+    public void setModel(M model) {
         this.model = model;
     }
 
-    public T getModel() {
+    public M getModel() {
         return this.model;
     }
 

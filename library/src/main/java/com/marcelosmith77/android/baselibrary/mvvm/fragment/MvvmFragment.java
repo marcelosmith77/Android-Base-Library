@@ -19,10 +19,10 @@ import com.marcelosmith77.android.baselibrary.mvvm.viewmodel.MvvmViewModel;
 import javax.inject.Inject;
 
 
-public abstract class MvvmFragment<B extends ViewDataBinding, V extends MvvmViewModel> extends BaseFragment<B> implements MvvmView {
+public abstract class MvvmFragment<B extends ViewDataBinding, VM extends MvvmViewModel> extends BaseFragment<B> implements MvvmView {
 
     @Inject
-    protected V viewModel;
+    protected VM viewModel;
 
     /**
      *  Sets the content view, creates the binding and attaches the view to the view model

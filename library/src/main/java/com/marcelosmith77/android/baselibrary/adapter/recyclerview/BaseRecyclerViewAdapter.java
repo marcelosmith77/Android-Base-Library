@@ -20,15 +20,15 @@ import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;
  */
 public abstract class BaseRecyclerViewAdapter<T extends BaseRecyclerViewHolder,M, V extends MvvmView> extends RecyclerView.Adapter<T> {
 
-    protected V view;
+    private V view;
 
     public T onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, viewType, parent, false);
-        return onCreateViewHolder(binding);
+        return onCreateViewHolder(binding, view);
     }
 
-    protected abstract T onCreateViewHolder(ViewDataBinding binding);
+    protected abstract T onCreateViewHolder(ViewDataBinding binding, V view);
 
     /**
      * Recupera o view model da posicao e realiza o bind do layout com o modelo

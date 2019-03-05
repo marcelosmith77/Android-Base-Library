@@ -5,16 +5,17 @@ import android.support.annotation.Nullable;
 
 import com.marcelosmith77.android.baselibrary.activity.INavigator;
 import com.marcelosmith77.android.baselibrary.adapter.recyclerview.BaseRecyclerViewAdapter;
+import com.marcelosmith77.android.baselibrary.adapter.recyclerview.BaseRecyclerViewHolder;
 import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;
 
-public class MvvmListViewModel<T, V extends MvvmView>  extends MvvmViewModel<T, V> {
+public class MvvmListViewModel<VH extends BaseRecyclerViewHolder,M, V extends MvvmView>  extends MvvmViewModel<M, V> {
 
     /**
      * Adapter para telas de listagem
      */
-    private BaseRecyclerViewAdapter adapter;
+    private BaseRecyclerViewAdapter<VH,M,V> adapter;
 
-    public MvvmListViewModel(INavigator navigator, BaseRecyclerViewAdapter adapter) {
+    public MvvmListViewModel(INavigator navigator, BaseRecyclerViewAdapter<VH,M,V> adapter) {
         super(navigator);
 
         this.navigator = navigator;
@@ -22,7 +23,7 @@ public class MvvmListViewModel<T, V extends MvvmView>  extends MvvmViewModel<T, 
     }
 
     @Override
-    public T getModel() {
+    public M getModel() {
         throw new RuntimeException("Model no available for listview model type, use adapter.getItems() instead.");
     }
 
@@ -44,7 +45,7 @@ public class MvvmListViewModel<T, V extends MvvmView>  extends MvvmViewModel<T, 
             adapter.detachMvvmView();
     }
 
-    public BaseRecyclerViewAdapter getAdapter() {
+    public BaseRecyclerViewAdapter<VH,M,V> getAdapter() {
         return adapter;
     }
 }
