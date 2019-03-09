@@ -64,6 +64,10 @@ public class RewardedAdsHelper<T> implements RewardedVideoAdListener {
         }
     }
 
+    public boolean isLoaded() {
+        return mRewardedVideoAd != null && mRewardedVideoAd.isLoaded();
+    }
+
     public void showRewardedVideo(T extras, RewardedCallback<T> callback) {
         this.extras = extras;
         this.callback = callback;
