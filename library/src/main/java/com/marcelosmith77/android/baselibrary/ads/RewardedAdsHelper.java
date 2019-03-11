@@ -97,10 +97,10 @@ public class RewardedAdsHelper<T> implements RewardedVideoAdListener {
         Log.i(REWARDED_TAG, "onRewardedVideoAdClosed");
 
         try {
-            if (reward != null) {
+//            if (reward != null) {
                 if (callback != null) {
                     this.callback.onRewarded(extras, reward);
-                }
+//                }
             }
         } finally {
             // Preload the next video ad.
