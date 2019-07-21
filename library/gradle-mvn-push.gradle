@@ -39,12 +39,21 @@ def getRepositoryPassword() {
     return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
 }
 
+task mappings << {
+
+    println "CARAIO"
+    println conf2ScopeMappings.mappings
+}
+
 afterEvaluate { project ->
     uploadArchives {
         repositories {
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
+                println "CARAIO"
+                println conf2ScopeMappings.mappings
+                
                 pom.groupId = GROUP
                 pom.artifactId = POM_ARTIFACT_ID
                 pom.version = VERSION_NAME
@@ -92,19 +101,19 @@ afterEvaluate { project ->
         sign configurations.archives
     }
 
-//    android.libraryVariants.all { variant ->
-//
-//        if ( variant.name == "release" ) {
-//
-//            def jarSourceTask = task("jar${variant.name.capitalize()}Sources", type: Jar) {
-//                description "Generates Java Sources for $variant.name."
-//                classifier = 'sources'
-//                from variant.javaCompile.source
-//            }
-//
-////        jarSourceTask.dependsOn variant.javaCompile
-//            println "PASSOU AQUI"
-//            artifacts.add('archives', jarSourceTask)
-//        }
-//    }
+    android.libraryVariants.all { variant ->
+
+        if ( variant.name == "release" ) {
+
+            def jarSourceTask = task("jar${variant.name.capitalize()}Sources", type: Jar) {
+                description "Generates Java Sources for $variant.name."
+                classifier = 'sources'
+                from variant.javaCompile.source
+            }
+
+//        jarSourceTask.dependsOn variant.javaCompile
+            println "PASSOU AQUI"
+            artifacts.add('archives', jarSourceTask)
+        }
+    }
 }
