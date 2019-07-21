@@ -18,7 +18,7 @@ pipeline {
     }
     stage('upload') {
       steps {
-        sh './gradlew --scan :library:uploadArchives'
+        sh './gradlew --stacktrace --debug :library:uploadArchives'
       }
     }
   }
