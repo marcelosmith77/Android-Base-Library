@@ -43,10 +43,14 @@ afterEvaluate { project ->
     uploadArchives {
         repositories {
             mavenDeployer {
-                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-                pom.scopeMappings.with {
-                    mappings.clear()
+                beforeDeployment { MavenDeployment deployment -> ({
+                        println "deployment CARAIO"
+                        println deployment.groupId
+                        println deployment.artifactId
+                        println deployment.version
+                    
+                        return signing.signPom(deployment)
+                    })
                 }
 
                 pom.groupId = GROUP
