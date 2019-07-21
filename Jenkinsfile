@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'android'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
-        sh 'gradle clean'
+        sh './gradlew clean'
       }
     }
   }
