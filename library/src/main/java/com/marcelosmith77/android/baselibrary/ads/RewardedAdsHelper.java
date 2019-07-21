@@ -98,10 +98,10 @@ public class RewardedAdsHelper<T> implements RewardedVideoAdListener {
 
         try {
 //            if (reward != null) {
-                if (callback != null) {
-                    this.callback.onRewarded(extras, reward);
-//                }
+            if (callback != null) {
+                this.callback.onRewarded(extras, reward);
             }
+//            }
         } finally {
             // Preload the next video ad.
             loadRewardedVideoAd();

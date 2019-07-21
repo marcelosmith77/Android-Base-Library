@@ -2,6 +2,7 @@ package com.marcelosmith77.android.baselibrary.adapter.recyclerview;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -22,7 +23,8 @@ public abstract class BaseRecyclerViewAdapter<VH extends BaseRecyclerViewHolder,
 
     private V view;
 
-    public VH onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ViewDataBinding binding = DataBindingUtil.inflate(layoutInflater, viewType, parent, false);
         return onCreateViewHolder(binding, view);

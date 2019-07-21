@@ -2,10 +2,12 @@ package com.marcelosmith77.android.baselibrary.mvvm.viewmodel;
 
 
 import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.marcelosmith77.android.baselibrary.BR;
 import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -39,8 +41,10 @@ public abstract class MvvmObservableViewModel<M, V extends MvvmView> extends Bas
 
     public void setModel(M model) {
         this.model = model;
+        notifyPropertyChanged(BR.model);
     }
 
+    @Bindable
     public M getModel() {
         return this.model;
     }

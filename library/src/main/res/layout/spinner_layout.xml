@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@{viewModel.toString()}"
-        android:textAppearance="?android:attr/textAppearanceMedium">
+        android:textColor="@color/primaryText">
 
     </TextView>
 </layout>
