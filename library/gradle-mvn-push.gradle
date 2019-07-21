@@ -96,6 +96,7 @@ afterEvaluate { project ->
 
         if ( variant.name == "release" ) {
 
+            variant.getJavaCompileProvider().
             def jarSourceTask = task("jar${variant.name.capitalize()}Sources", type: Jar) {
                 description "Generates Java Sources for $variant.name."
                 classifier = 'sources'
