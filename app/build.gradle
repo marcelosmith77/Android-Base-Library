@@ -33,5 +33,3 @@ dependencies {
 
     implementation("com.android.databinding:baseLibrary:3.3.0")
 }
-
-}
