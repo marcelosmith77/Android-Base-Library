@@ -13,12 +13,12 @@ pipeline {
     }
     stage('compile') {
       steps {
-        sh './gradlew compileReleaseSources'
+        sh './gradlew :library:compileReleaseSources'
       }
     }
     stage('upload') {
       steps {
-        sh './gradlew uploadArchives'
+        sh './gradlew :library:uploadArchives'
       }
     }
   }
