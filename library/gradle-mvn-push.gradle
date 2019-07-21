@@ -53,7 +53,7 @@ afterEvaluate { project ->
 
                 println "CARAIO"
                 println conf2ScopeMappings.mappings
-                
+
                 pom.groupId = GROUP
                 pom.artifactId = POM_ARTIFACT_ID
                 pom.version = VERSION_NAME
