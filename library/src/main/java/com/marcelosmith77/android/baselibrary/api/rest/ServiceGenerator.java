@@ -21,7 +21,7 @@ public class ServiceGenerator {
      * @return service
      */
     public static <S> S createService(String baseUrl, Class<S> serviceClass) {
-        return createService(serviceClass, null);
+        return createService(baseUrl, serviceClass, null);
     }
 
     /**
