@@ -11,14 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class ServiceGenerator {
 
-    public static final String API_BASE_URL = "http://195.6.7.101:3000"; //TODO constante
-
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-
-    private static Retrofit.Builder builder =
-            new Retrofit.Builder()
-                    .baseUrl(API_BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create());
 
     /**
      * Cria service para chamada de api sem autenticação
@@ -27,7 +20,7 @@ public class ServiceGenerator {
      * @param <S>
      * @return service
      */
-    public static <S> S createService(Class<S> serviceClass) {
+    public static <S> S createService(String baseUrl, Class<S> serviceClass) {
         return createService(serviceClass, null);
     }
 
@@ -39,9 +32,13 @@ public class ServiceGenerator {
      * @param authToken - idToken para autorização da api
      * @return service
      */
-    public static <S> S createService(Class<S> serviceClass, final String authToken) {
+    public static <S> S createService(String baseUrl, Class<S> serviceClass, final String authToken) {
 
         Retrofit retrofit = null;
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                        .baseUrl(baseUrl)
+                        .addConverterFactory(GsonConverterFactory.create());
 
         if (!TextUtils.isEmpty(authToken)) {
             AuthenticationInterceptor interceptor =
@@ -51,11 +48,11 @@ public class ServiceGenerator {
                 httpClient.addInterceptor(interceptor);
 
                 builder.client(httpClient.build());
-                retrofit = builder.build();
             }
         }
 
+        retrofit = builder.build();
 
-        return retrofit != null ? retrofit.create(serviceClass) : null;
+        return retrofit.create(serviceClass);
     }
 }
