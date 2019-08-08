@@ -29,7 +29,7 @@ public class ServiceGenerator {
      *
      * @param serviceClass
      * @param <S>
-     * @param authToken - idToken para autorização da api
+     * @param authToken    - idToken para autorização da api
      * @return service
      */
     public static <S> S createService(String baseUrl, Class<S> serviceClass, final String authToken) {
@@ -37,8 +37,8 @@ public class ServiceGenerator {
         Retrofit retrofit = null;
 
         Retrofit.Builder builder = new Retrofit.Builder()
-                        .baseUrl(baseUrl)
-                        .addConverterFactory(GsonConverterFactory.create());
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create());
 
         if (!TextUtils.isEmpty(authToken)) {
             AuthenticationInterceptor interceptor =
@@ -46,10 +46,10 @@ public class ServiceGenerator {
 
             if (!httpClient.interceptors().contains(interceptor)) {
                 httpClient.addInterceptor(interceptor);
-
-                builder.client(httpClient.build());
             }
         }
+
+        builder.client(httpClient.build());
 
         retrofit = builder.build();
 
