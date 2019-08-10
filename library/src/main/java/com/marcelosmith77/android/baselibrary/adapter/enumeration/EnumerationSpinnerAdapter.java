@@ -9,11 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.marcelosmith77.android.baselibrary.BR;
+import com.marcelosmith77.android.baselibrary.R;
 
 public abstract class EnumerationSpinnerAdapter<T extends IEnumerationAdapter> extends ArrayAdapter<T> {
     Context mContext;
     int mLayoutResourceId;
     T[] mItems;
+
+    public EnumerationSpinnerAdapter(Context context,  T[] data) {
+        this(context, R.layout.spinner_layout, data);
+    }
 
     public EnumerationSpinnerAdapter(Context context, int layoutResourceId, T[] data) {
         super(context, layoutResourceId, data);
