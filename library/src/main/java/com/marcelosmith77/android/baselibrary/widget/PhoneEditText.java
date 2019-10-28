@@ -7,7 +7,7 @@ import android.text.TextWatcher;
 import android.text.method.NumberKeyListener;
 import android.util.AttributeSet;
 
-public class PhoneEditText extends android.support.v7.widget.AppCompatEditText {
+public class PhoneEditText extends androidx.appcompat.widget.AppCompatEditText {
     private boolean isUpdating;
 
     /*

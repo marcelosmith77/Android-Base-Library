@@ -1,11 +1,9 @@
 package com.marcelosmith77.android.baselibrary;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.os.Build;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 public class ActivityUtils {
 

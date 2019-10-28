@@ -1,7 +1,7 @@
 package com.marcelosmith77.android.baselibrary.mvvm.viewmodel;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.marcelosmith77.android.baselibrary.activity.INavigator;
 import com.marcelosmith77.android.baselibrary.adapter.recyclerview.BaseRecyclerViewAdapter;

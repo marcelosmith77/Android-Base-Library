@@ -1,6 +1,6 @@
 package com.marcelosmith77.android.baselibrary.converter;
 
-import android.databinding.InverseMethod;
+import androidx.databinding.InverseMethod;
 import android.graphics.Color;
 import android.widget.TextView;
 

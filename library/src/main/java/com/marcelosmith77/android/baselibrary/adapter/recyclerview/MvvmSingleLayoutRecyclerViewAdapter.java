@@ -1,6 +1,6 @@
 package com.marcelosmith77.android.baselibrary.adapter.recyclerview;
 
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 
 import java.util.ArrayList;
 import java.util.List;

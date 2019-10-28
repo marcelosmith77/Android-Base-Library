@@ -1,6 +1,6 @@
 package com.marcelosmith77.android.baselibrary.mvvm.viewholder;
 
-import android.databinding.ViewDataBinding;
+import androidx.databinding.ViewDataBinding;
 
 import com.marcelosmith77.android.baselibrary.BR;
 import com.marcelosmith77.android.baselibrary.adapter.recyclerview.BaseRecyclerViewHolder;

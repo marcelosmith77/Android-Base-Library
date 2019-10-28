@@ -1,11 +1,11 @@
 package com.marcelosmith77.android.baselibrary.mvvm.viewmodel;
 
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.marcelosmith77.android.baselibrary.BR;
 import com.marcelosmith77.android.baselibrary.mvvm.view.MvvmView;

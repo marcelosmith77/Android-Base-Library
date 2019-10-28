@@ -5,22 +5,22 @@ buildscript {
 
 
     ext {
-        setup = [compileSdk: 27,
+        setup = [compileSdk: 28,
                  buildTools: "28.0.3",
-                 minSdk    : 15,
-                 targetSdk : 27,
+                 minSdk    : 16,
+                 targetSdk : 28,
                  source: JavaVersion.VERSION_1_8,
                  target: JavaVersion.VERSION_1_8]
 
         versions = [supportLib: "27.1.1",
                     playServices: "10.2.1",
-                    playServiceAds: "17.1.2",
+                    playServiceAds: "18.2.0",
                     dagger : "2.15",
-                    parceler: "1.1.10",
+                    parceler: "1.1.12",
                     retrofit: "2.4.0",
                     rxJava: "1.3.8",
                     rxJava2: "2.1.2",
-                    rxAndroid: "2.0.2",
+                    rxAndroid: "2.1.1",
                     realm: "4.3.4",
                     junit: "4.12",
                     espresso: "2.2.2"]
@@ -31,8 +31,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
-        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.google.gms:google-services:4.3.2'
         classpath "io.realm:realm-gradle-plugin:${versions.realm}"
     }
 }

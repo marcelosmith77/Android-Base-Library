@@ -1,6 +1,6 @@
 package com.marcelosmith77.android.baselibrary.adapter.radiogroup;
 
-import android.databinding.InverseBindingListener;
+import androidx.databinding.InverseBindingListener;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;

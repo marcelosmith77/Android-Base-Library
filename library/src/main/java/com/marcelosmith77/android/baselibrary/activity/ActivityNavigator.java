@@ -2,7 +2,7 @@ package com.marcelosmith77.android.baselibrary.activity;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.marcelosmith77.android.easydrawer.activity.AbstractBaseDrawerActivity;
 
